@@ -1,0 +1,11 @@
+{% extends "personal/header.html" %}
+{% block content %}
+	    {% for post in object_list %}
+	    {% autoescape off %}
+		    <h5><a href="{{post.id}}"> <b> {{ post.title }}</b></a></h5>
+            {{ post.date|date:"Y-m-d" }}
+            {{ post.bodyszort|linebreaks}}
+
+        {% endautoescape %}
+	    {% endfor %}
+{% endblock %}
